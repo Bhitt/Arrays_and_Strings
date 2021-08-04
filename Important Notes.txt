@@ -1,0 +1,8 @@
+ASCII - 128 characters (7 bits)
+ASCII Extended - 256 characters (8 bits)
+Unicode:
+	Includes ASCII plus a lot more (attempts to cover all writing languages)
+	Different formats with different amount of information (UTF-8, UTF-16, UTF-32, etc)
+	UTF-8 is most popular
+
+	
