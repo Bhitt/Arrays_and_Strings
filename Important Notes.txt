@@ -1,8 +1,32 @@
 ASCII - 128 characters (7 bits)
 ASCII Extended - 256 characters (8 bits)
-Unicode:
+Unicode -
 	Includes ASCII plus a lot more (attempts to cover all writing languages)
 	Different formats with different amount of information (UTF-8, UTF-16, UTF-32, etc)
 	UTF-8 is most popular
 
-	
+Hash Tables
+	Maps keys to values for highly efficient lookup
+	Simple implementation: use an array of linked lists and a hash code function
+	To insert a key:
+		1) First compute the key's hash code
+		2) Map the code to an index in the array
+		3) At this index, there is a linked list of keys and values. Store the key
+			and value.
+	If there is a high number of collisions, the worst case is O(N), where N is the number of keys.
+	Normally though, you assume a low amount of collisions, so the lookup time is O(1);
+
+	Alternatively, you can implement the hash table with a balanced binary search tree. This gives
+	a O(log N) lookup time.
+
+Resizable Arrays (ArrayList, Vector, etc.)
+	Amortized insertion runtime: O(1)
+		This is usually accomplished by doubling the array whenever it is full. Each doubling takes
+		O(n) time, but happens so rarely that its amortized runtime is still O(1).
+
+		Sum of series: Suppose you have a mile to walk to the store. You walk 0.5 miles, then 0.25 miles,
+		then 0.125 miles, and so on. You won't exceed the mile.
+
+StringBuilder
+	Imagine you were concatenating a list of strings. On each concatenation, a new copy of the string is created, and the two strings are copied over, character by character. Assume the strings are all length x and there are s strings. The first iteration requires us to copy x characters. The second iteration requires copying 2x characters. The third 3x, and so on. This reduces to O(xn^2).
+	StringBuild helps to avoid this problem. It simply creates a resizable array of all the strings, copying them back to a string only when necessary.
