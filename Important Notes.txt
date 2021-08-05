@@ -30,3 +30,6 @@ Resizable Arrays (ArrayList, Vector, etc.)
 StringBuilder
 	Imagine you were concatenating a list of strings. On each concatenation, a new copy of the string is created, and the two strings are copied over, character by character. Assume the strings are all length x and there are s strings. The first iteration requires us to copy x characters. The second iteration requires copying 2x characters. The third 3x, and so on. This reduces to O(xn^2).
 	StringBuild helps to avoid this problem. It simply creates a resizable array of all the strings, copying them back to a string only when necessary.
+
+Hash Table optimization
+	Some problems that require a hashtable for letters can be optimized by using a bit vector.
